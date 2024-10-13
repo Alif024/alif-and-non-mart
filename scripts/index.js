@@ -4,9 +4,11 @@ const productsReccomendHTML = document.querySelector("#products-recommend");
 const electronics = document.querySelector("#electronics");
 const computersAssesories = document.querySelector("#computers-assesories");
 const homeAppliances = document.querySelector("#home-appliances");
+const allCategories = document.querySelector("#next-icon");
 
 let carts = [];
 let products = [];
+let selectCategory = ["electronics", "computers-assesories", "home-appliances"];
 
 const addCartToMemory = () => {
   localStorage.setItem("cart", JSON.stringify(carts));
@@ -135,6 +137,37 @@ const swapImage = () => {
 // สลับรูปภาพทุก 3 วินาที
 setInterval(swapImage, 3000);
 
+
+electronics.addEventListener("click", () => {
+  // console.log("click electronics");
+  selectCategory = ["electronics"];
+  localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
+  window.location.href = `category.html`;
+});
+homeAppliances.addEventListener("click", () => {
+  // console.log("click home appliances");
+  selectCategory = ["home-appliances"];
+  localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
+  window.location.href = `category.html`;
+});
+computersAssesories.addEventListener("click", () => {
+  // console.log("click computers assesories");
+  selectCategory = ["computers-assesories"];
+  localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
+  window.location.href = `category.html`;
+});
+allCategories.addEventListener("click", () => {
+  // console.log("click all categories");
+  selectCategory = ["electronics", "computers-assesories", "home-appliances"];
+  localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
+  window.location.href = `category.html`
+});
+
+const checkOutBtn = document.querySelector(".checkOut");
+
+checkOutBtn.addEventListener("click", () => {
+  window.location.href = `ordering.html`;
+});
 
 const initApp = () => {
   fetch("scripts/products.json")

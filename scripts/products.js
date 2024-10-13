@@ -1,5 +1,10 @@
 const listCartHTML = document.querySelector(".listCart");
 const iconCartSpan = document.querySelector(".icon-cart span");
+const checkOutBtn = document.querySelector(".checkOut");
+
+checkOutBtn.addEventListener("click", () => {
+  window.location.href = `../../ordering.html`;
+});
 
 let carts = [];
 let products = [];

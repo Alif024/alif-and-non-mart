@@ -3,9 +3,15 @@ const categoryCards = document.querySelectorAll(".category-cards .card");
 const listCartHTML = document.querySelector(".listCart");
 const iconCartSpan = document.querySelector(".icon-cart span");
 
+const checkOutBtn = document.querySelector(".checkOut");
+
+checkOutBtn.addEventListener("click", () => {
+  window.location.href = `ordering.html`;
+});
+
 let carts = [];
 let products = [];
-let selectCategory = ["electronics", "computers-assesories", "home-appliances"];
+let selectCategory = [];
 
 const updateCategoryCards = () => {
   categoryCards.forEach((card) => {
@@ -37,6 +43,7 @@ categoryCards.forEach((card) => {
     // localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
     updateCategoryCards();
     filterProducts();
+    localStorage.setItem("selectCategory", JSON.stringify(selectCategory));
   });
 });
 
@@ -225,6 +232,11 @@ const initApp = () => {
       if (localStorage.getItem("cart")) {
         carts = JSON.parse(localStorage.getItem("cart"));
         addCardToHTML();
+      }
+      if (localStorage.getItem("selectCategory")) {
+        selectCategory = JSON.parse(localStorage.getItem("selectCategory"));
+        updateCategoryCards();
+        filterProducts();
       }
     });
 };

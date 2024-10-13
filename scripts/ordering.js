@@ -2,6 +2,12 @@ const listCartHTML = document.querySelector(".listCart");
 const iconCartSpan = document.querySelector(".icon-cart span");
 const productsReccomendHTML = document.querySelector("#products-recommend");
 
+const checkOutBtn = document.querySelector(".checkOut");
+
+checkOutBtn.addEventListener("click", () => {
+  window.location.href = `#`;
+});
+
 let carts = [];
 let products = [];
 
