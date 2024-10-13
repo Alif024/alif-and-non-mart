@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordering</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/ordering.css" />
+  </head>
+  <body>
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img
+          src="assets/logo-no-background.png"
+          alt=""
+          width="auto"
+          height="50px"
+        />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ordering</a>
+          </li>
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            >
+              Ordering
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus"><</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          CLOSE
+        </button>
+        <button class="checkOut">CHECK OUT</button>
+      </div>
+    </div>
+    <main class="container">
+      <div class="row">
+        <!-- รายการสินค้าและฟอร์มที่อยู่จัดส่ง -->
+        <div class="col-lg-7">
+          <h3 class="mb-4">
+            รถเข็นของฉัน (สินค้า <span id="total-quantity">0</span> ชิ้น)
+          </h3>
+
+          <!-- รายการสินค้าในตะกร้า -->
+          <div class="table-responsive mb-4">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">สินค้า</th>
+                  <th scope="col" class="text-end">ราคาต่อชิ้น (บาท)</th>
+                  <th scope="col" class="text-center">จำนวน</th>
+                  <!-- <th scope="col" class="text-end">รวม</th> -->
+                </tr>
+              </thead>
+              <tbody class="list-products">
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="https://via.placeholder.com/100"
+                        alt="Product"
+                        class="me-3"
+                        style="width: 100px"
+                      />
+                      <div>
+                        <p class="mb-1">เครื่องปั่นน้ำผลไม้</p>
+                        <span class="text-muted">สี : Printstream</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-end">฿1,890</td>
+                  <td class="text-center">
+                    <div class="d-inline-flex align-items-center">
+                      <button
+                        class="btn btn-sm btn-outline-secondary"
+                        onclick="minus(0)"
+                      >
+                        -
+                      </button>
+                      <span class="mx-2">1</span>
+                      <button
+                        class="btn btn-sm btn-outline-secondary"
+                        onclick="plus(0)"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </td>
+                  <td class="text-end">฿1,890</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- สรุปการสั่งซื้อ -->
+        <div class="col-lg-5" id="order">
+          <!-- ฟอร์มที่อยู่จัดส่ง -->
+          <div class="shipping-address mb-3">
+            <h5>ที่อยู่จัดส่ง</h5>
+            <form id="address-form">
+              <div class="mb-2">
+                <label for="name" class="form-label">ชื่อผู้รับ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="กรอกชื่อผู้รับ"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label for="address" class="form-label">ที่อยู่</label>
+                <textarea
+                  class="form-control"
+                  id="address"
+                  name="address"
+                  rows="2"
+                  placeholder="กรอกที่อยู่"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-2">
+                <label for="province" class="form-label">จังหวัด</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="province"
+                  name="province"
+                  placeholder="กรอกจังหวัด"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label for="zipcode" class="form-label">รหัสไปรษณีย์</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zipcode"
+                  name="zipcode"
+                  placeholder="กรอกรหัสไปรษณีย์"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label for="phone" class="form-label">เบอร์โทรศัพท์</label
+                ><input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="กรอกเบอร์โทรศัพท์"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="border rounded p-3 bg-light shadow-sm">
+            <h5 class="mb-3">สรุปการสั่งซื้อ</h5>
+            <div class="d-flex justify-content-between mb-2">
+              <span
+                >ยอดรวมสินค้า (<span id="total-quantity">0</span> ชิ้น)</span
+              >
+              <span id="total-price">฿1,890</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span>ส่วนลดคูปอง</span>
+              <span id="discount">-฿80</span>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+              <span>ค่าจัดส่ง</span>
+              <span id="shipping-costs">฿59</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between fw-bold mb-3">
+              <span>ยอดสุทธิ</span>
+              <span id="net-price">฿1,949</span>
+            </div>
+            <button class="btn btn-primary w-100" onclick="ordering()">
+              ทำการสั่งซื้อ
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderModalLabel">การสั่งซื้อ</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">สั่งซื้อเรียบร้อยแล้ว!</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              ปิด
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-light py-3">
+      <div class="container text-center">
+        <p class="mb-0">© 2024 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/ordering.js"></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/products.css" />
+  </head>
+  <body>
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="../assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img src="../assets/logo-no-background.png" alt="" />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+ 
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus"><</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          CLOSE
+        </button>
+        <button class="checkOut">CHECK OUT</button>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="product-details">
+        <div class="images-gallery">
+          <div class="img">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderWire.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderWire1.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderWire2.png"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderWire3.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderWire4.jpg"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderWire.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(1)"
+                alt="The Woods"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderWire1.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(2)"
+                alt="Cinque Terre"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderWire2.png"
+                style="width: 100%"
+                onclick="currentProductImg(3)"
+                alt="Mountains and fjords"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderWire3.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(4)"
+                alt="Northern Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderWire4.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(5)"
+                alt="Nature and sunrise"
+              />
+            </div>
+          </div>
+          
+          <p class="product-warranty"><strong>การรับประกัน</strong>: รับประกันสินค้า 1 ปี (กรณีใช้งานตามคู่มือ)</p>
+          <div class="product-contact">
+            <h3>ติดต่อสอบถามเพิ่มเติม:</h3>
+            <p>โทร: 02-123-4567</p>
+            <p>อีเมล: <a href="mailto:support@electronics.co.th" style="text-decoration: none; color: white;">support@electronics.co.th</a></p>
+          </div>
+        </div>
+        <div class="product-info">
+          <h1>ลวดบัดกรี (Solder Wire)</h1>
+          <h2>฿150.00</h2>
+          <div class="btns">
+            <div class="quantity">
+              <button class="decrease" onclick="plusQuantity(-1)"><</button>
+              <input type="number" min="1" value="1" id="product-quantity">
+              <button class="increase" onclick="plusQuantity(1)">></button>
+            </div>
+            <button class="btn-dark-blue-outline" style="height: 60px" onclick="addProduct('9')">
+              Add to cart
+            </button>
+          </div>
+          <div class="description">
+            <div class="product-container">
+              <h1 class="product-title">รายละเอียดสินค้า</h1>
+              
+              <p class="product-subtitle"><strong>ชื่อสินค้า</strong>: ลวดบัดกรี (Solder Wire)</p>
+      
+              <div class="product-detail">
+                <h3>คุณสมบัติหลัก:</h3>
+                <ul>
+                    <li><strong>วัสดุหลัก:</strong> ตะกั่ว (Lead) ผสมกับดีบุก (Tin) ในอัตราส่วน 60/40 หรือ 63/37</li>
+                    <li><strong>เส้นผ่านศูนย์กลาง:</strong> มีให้เลือกตั้งแต่ 0.5 มม. ถึง 1.2 มม.</li>
+                    <li><strong>จุดหลอมเหลว:</strong> ประมาณ 183°C ถึง 190°C (ขึ้นอยู่กับอัตราส่วนตะกั่วและดีบุก)</li>
+                    <li><strong>การไหลและการยึดเกาะที่ดีเยี่ยม:</strong> ช่วยให้การบัดกรีทำได้ง่าย สะอาด และทนทาน</li>
+                    <li><strong>คุณสมบัติการหลอมละลายเร็ว:</strong> ช่วยให้การบัดกรีเป็นไปอย่างรวดเร็ว ลดการทำความเสียหายให้กับแผงวงจร</li>
+                    <li><strong>ปราศจากสารตะกั่ว (Lead-Free):</strong> มีรุ่นที่เป็นแบบปลอดสารตะกั่วสำหรับการบัดกรีที่เป็นมิตรต่อสิ่งแวดล้อม</li>
+                    <li><strong>การใช้งาน:</strong> เหมาะสำหรับการบัดกรีชิ้นส่วนอิเล็กทรอนิกส์, สายไฟ, และการประกอบแผงวงจรไฟฟ้า</li>
+                </ul>
+        
+                <h3>การใช้งาน:</h3>
+                <p>ลวดบัดกรี (Solder Wire) ใช้สำหรับการเชื่อมต่อระหว่างขั้วไฟฟ้าและชิ้นส่วนอิเล็กทรอนิกส์ เช่น การบัดกรีตัวต้านทาน, ตัวเก็บประจุ และสายไฟเข้ากับแผงวงจร หรือการซ่อมบำรุงอุปกรณ์ไฟฟ้าและอิเล็กทรอนิกส์</p>
+        
+                <h3>ข้อมูลเฉพาะเพิ่มเติม:</h3>
+                <ul>
+                    <li><strong>น้ำหนักบรรจุ:</strong> มีให้เลือกทั้งแบบม้วนขนาดเล็ก (50 กรัม) และขนาดใหญ่ (500 กรัม)</li>
+                    <li><strong>ฟลักซ์ (Flux) ภายใน:</strong> ประกอบด้วยฟลักซ์ Rosin ที่ช่วยทำความสะอาดจุดบัดกรีในตัว</li>
+                    <li><strong>การใช้งานหลากหลาย:</strong> สามารถใช้ได้กับหัวแร้งไฟฟ้าทุกชนิด</li>
+                    <li><strong>มาตรฐาน:</strong> เป็นไปตามมาตรฐาน RoHS สำหรับสินค้าปลอดสารพิษ</li>
+                </ul>
+        
+                <h3>แพ็กเกจประกอบด้วย:</h3>
+                <ul>
+                    <li>ลวดบัดกรีในแพ็คเกจที่เลือก (ม้วน 50 กรัม หรือ 500 กรัม)</li>
+                    <li>กล่องบรรจุสินค้าพร้อมฟลักซ์ในตัว</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/products.js"></script>
+  </body>
+</html>

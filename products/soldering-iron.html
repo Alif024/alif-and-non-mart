@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/products.css" />
+  </head>
+  <body>
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="../assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img src="../assets/logo-no-background.png" alt="" />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+ 
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+ 
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus"><</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          CLOSE
+        </button>
+        <button class="checkOut">CHECK OUT</button>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="product-details">
+        <div class="images-gallery">
+          <div class="img">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderingIronGun.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderingIronGun1.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderingIronGun5.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderingIronGun3.jpg"
+                style="width: 100%"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/SolderingIronGun4.jpg"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderingIronGun.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(1)"
+                alt="The Woods"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderingIronGun1.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(2)"
+                alt="Cinque Terre"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderingIronGun5.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(3)"
+                alt="Mountains and fjords"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderingIronGun3.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(4)"
+                alt="Northern Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/SolderingIronGun4.jpg"
+                style="width: 100%"
+                onclick="currentProductImg(5)"
+                alt="Nature and sunrise"
+              />
+            </div>
+          </div>
+          
+          <p class="product-warranty"><strong>การรับประกัน</strong>: รับประกันสินค้า 1 ปี (กรณีใช้งานตามคู่มือ)</p>
+          <div class="product-contact">
+            <h3>ติดต่อสอบถามเพิ่มเติม:</h3>
+            <p>โทร: 02-123-4567</p>
+            <p>อีเมล: <a href="mailto:support@electronics.co.th" style="text-decoration: none; color: white;">support@electronics.co.th</a></p>
+          </div>
+        </div>
+        <div class="product-info">
+          <h1>หัวแร้งบัดกรีไฟฟ้า Sporty 130 watt</h1>
+          <h2>฿150.00</h2>
+          <div class="btns">
+            <div class="quantity">
+              <button class="decrease" onclick="plusQuantity(-1)"><</button>
+              <input type="number" min="1" value="1" id="product-quantity">
+              <button class="increase" onclick="plusQuantity(1)">></button>
+            </div>
+            <button class="btn-dark-blue-outline" style="height: 60px" onclick="addProduct('10')">
+              Add to cart
+            </button>
+          </div>
+          <div class="description">
+            <div class="product-container">
+              <h1 class="product-title">รายละเอียดสินค้า</h1>
+              
+              <p class="product-subtitle"><strong>ชื่อสินค้า</strong>: เครื่องบัดกรีไฟฟ้า (Electric Soldering Iron)</p>
+              <p class="product-subtitle"><strong>รุ่น</strong>: XG-200</p>
+      
+              <div class="product-detail">
+                  <h3>คุณสมบัติหลัก:</h3>
+                  <ul>
+                      <li><strong>กำลังไฟฟ้า</strong>: 60 วัตต์</li>
+                      <li><strong>แรงดันไฟฟ้า</strong>: 220V - 240V</li>
+                      <li><strong>อุณหภูมิสูงสุด</strong>: 450°C</li>
+                      <li><strong>การควบคุมอุณหภูมิ</strong>: ปรับได้ตั้งแต่ 200°C - 450°C ด้วยปุ่มหมุน</li>
+                      <li><strong>วัสดุหัวบัดกรี</strong>: ทองแดงเคลือบหัวคาร์ไบด์เพื่อทนความร้อนสูง</li>
+                      <li><strong>น้ำหนักเบา</strong>: ประมาณ 250 กรัม ทำให้สะดวกต่อการพกพาและการใช้งานที่ต่อเนื่อง</li>
+                      <li><strong>ดีไซน์มือจับ</strong>: มือจับทำจากวัสดุกันความร้อน (Heat-resistant) พร้อมเคลือบกันลื่นเพื่อเพิ่มความสะดวกสบายในการใช้งาน</li>
+                      <li><strong>ความยาวสายไฟ</strong>: 1.5 เมตร สายไฟแบบทนความร้อนสูงเพื่อความปลอดภัย</li>
+                  </ul>
+              </div>
+      
+              <div class="product-detail">
+                  <h3>อุปกรณ์ที่มีในชุด:</h3>
+                  <ul>
+                      <li>หัวแร้งบัดกรี 1 เครื่อง</li>
+                      <li>ขาตั้งหัวแร้ง 1 ชิ้น</li>
+                      <li>ลวดบัดกรี (60% Sn) 1 ม้วน (10 กรัม)</li>
+                      <li>ฟองน้ำทำความสะอาดหัวแร้ง 1 ชิ้น</li>
+                  </ul>
+              </div>
+      
+              <div class="product-detail">
+                  <h3>การใช้งาน:</h3>
+                  <p>เหมาะสำหรับการบัดกรีงานไฟฟ้า, งานอิเล็กทรอนิกส์ และการซ่อมแซมวงจรต่างๆ ใช้งานง่ายสำหรับทั้งมือใหม่และผู้มีประสบการณ์</p>
+              </div>
+      
+              <div class="product-detail">
+                  <h3>ข้อควรระวัง:</h3>
+                  <p>- หลีกเลี่ยงการสัมผัสหัวบัดกรีเมื่อเครื่องทำงาน เพื่อป้องกันการเกิดอันตรายจากความร้อน</p>
+                  <p>- ปิดเครื่องและถอดปลั๊กทุกครั้งหลังการใช้งาน</p>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/products.js"></script>
+  </body>
+</html>

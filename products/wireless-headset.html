@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/products.css" />
+  </head>
+  <body>
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="../assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img src="../assets/logo-no-background.png" alt="" />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus">❮</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          CLOSE
+        </button>
+        <button class="checkOut">CHECK OUT</button>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="product-details">
+        <div class="images-gallery">
+          <div class="img">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="products-img-slide">
+              <img
+                src="../assets/Wireless-Headset.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Wireless-Headset1.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Wireless-Headset2.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Wireless-Headset3.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Wireless-Headset4.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Wireless-Headset.png"
+                style="width: 100%"
+                onclick="currentProductImg(1)"
+                alt="The Woods"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Wireless-Headset1.png"
+                style="width: 100%"
+                onclick="currentProductImg(2)"
+                alt="Cinque Terre"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Wireless-Headset2.png"
+                style="width: 100%"
+                onclick="currentProductImg(3)"
+                alt="Mountains and fjords"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Wireless-Headset3.png"
+                style="width: 100%"
+                onclick="currentProductImg(4)"
+                alt="Northern Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Wireless-Headset4.png"
+                style="width: 100%"
+                onclick="currentProductImg(5)"
+                alt="Northern Lights"
+              />
+            </div>
+          </div>
+          
+          <p class="product-warranty"><strong>การรับประกัน</strong>: รับประกันสินค้า 1 ปี (กรณีใช้งานตามคู่มือ)</p>
+          <div class="product-contact">
+            <h3>ติดต่อสอบถามเพิ่มเติม:</h3>
+            <p>โทร: 02-123-4567</p>
+            <p>อีเมล: <a href="mailto:support@electronics.co.th" style="text-decoration: none; color: white;">support@electronics.co.th</a></p>
+          </div>
+        </div>
+        <div class="product-info">
+          <h1>ชุดหูฟังไร้สาย (Wireless Headset)</h1>
+          <h2>฿250.00</h2>
+          <div class="btns">
+            <div class="quantity">
+              <button class="decrease" onclick="plusQuantity(-1)">❮</button>
+              <input type="number" min="1" value="1" id="product-quantity">
+              <button class="increase" onclick="plusQuantity(1)">></button>
+            </div>
+            <button class="btn-dark-blue-outline" style="height: 60px" onclick="addProduct('15')">
+              Add to cart
+            </button>
+          </div>
+          <div class="description">
+            <div class="product-container">
+              <h1 class="product-title">รายละเอียดสินค้า</h1>
+              <div class="product-detail">
+                <p>
+                  ชุดหูฟังไร้สาย (<span class="highlight">Wireless Headset</span>) เป็นอุปกรณ์ที่ให้เสียงคุณภาพสูงโดยไม่ต้องใช้สายเคเบิล 
+                  ซึ่งช่วยให้ผู้ใช้มีความสะดวกสบายในการใช้งาน และเหมาะสำหรับการฟังเพลง ดูภาพยนตร์ หรือการเล่นเกม
+                </p>
+        
+                <h4>คุณสมบัติที่สำคัญของ Wireless Headset</h4>
+                <ul>
+                    <li><strong>ความสะดวกสบาย:</strong> ไม่ต้องพะวงกับสายเคเบิลที่พันกัน ช่วยให้การเคลื่อนไหวเป็นอิสระมากขึ้น</li>
+                    <li><strong>คุณภาพเสียง:</strong> ให้เสียงที่ชัดเจน และบางรุ่นยังมีระบบตัดเสียงรบกวน (Noise Cancelling) สำหรับการฟังที่มีสมาธิ</li>
+                    <li><strong>การเชื่อมต่อ:</strong> ส่วนใหญ่ใช้เทคโนโลยี Bluetooth ทำให้สามารถเชื่อมต่อกับอุปกรณ์ต่างๆ ได้ง่าย</li>
+                    <li><strong>อายุการใช้งานแบตเตอรี่:</strong> หลายรุ่นมีอายุการใช้งานแบตเตอรี่ยาวนาน สามารถใช้งานได้หลายชั่วโมงต่อการชาร์จหนึ่งครั้ง</li>
+                    <li><strong>การควบคุมแบบสัมผัสหรือปุ่ม:</strong> สามารถควบคุมเสียงหรือเปลี่ยนเพลงได้จากหูฟังโดยไม่ต้องหยิบโทรศัพท์ขึ้นมา</li>
+                </ul>
+        
+                <h4>ประเภทของ Wireless Headset</h4>
+                <ul>
+                    <li><strong>On-ear Headset:</strong> หูฟังที่นั่งอยู่บนหู เหมาะสำหรับการใช้งานในระยะเวลาสั้นๆ</li>
+                    <li><strong>Over-ear Headset:</strong> หูฟังที่ครอบหูทั้งหมด ให้เสียงที่ดีและช่วยตัดเสียงรบกวนได้มากกว่า</li>
+                    <li><strong>True Wireless Earbuds:</strong> หูฟังไร้สายแบบไม่มีสายเชื่อมต่อระหว่างหูฟังทั้งสองข้าง</li>
+                </ul>
+        
+                <h4>การเลือก Wireless Headset ที่เหมาะสม</h4>
+                <ul>
+                    <li><strong>คุณภาพเสียง:</strong> ควรเลือกหูฟังที่มีคุณภาพเสียงดีตามความต้องการในการใช้งาน เช่น ฟังเพลงหรือเล่นเกม</li>
+                    <li><strong>อายุการใช้งานแบตเตอรี่:</strong> ควรเลือกหูฟังที่มีแบตเตอรี่ใช้งานได้ยาวนาน เพื่อไม่ให้เกิดปัญหากับการใช้งาน</li>
+                    <li><strong>ฟีเจอร์เพิ่มเติม:</strong> เช่น การตัดเสียงรบกวน, ระบบเสียงเซอร์ราวด์ หรือการควบคุมด้วยเสียง</li>
+                    <li><strong>การออกแบบและความสะดวกสบาย:</strong> ควรเลือกหูฟังที่มีน้ำหนักเบาและออกแบบมาให้สวมใส่สบาย เพื่อให้สามารถใช้งานได้นานๆ</li>
+                </ul>
+        
+                <h4>แบรนด์ที่ได้รับความนิยม</h4>
+                <ul>
+                    <li><strong>Sony:</strong> มีชื่อเสียงด้านคุณภาพเสียงและฟีเจอร์ต่างๆ เช่น การตัดเสียงรบกวน</li>
+                    <li><strong>Bose:</strong> โดดเด่นในด้านการตัดเสียงรบกวนและความสบายในการสวมใส่</li>
+                    <li><strong>Apple:</strong> มี AirPods ที่ได้รับความนิยมสูงและฟีเจอร์เชื่อมต่อที่สะดวก</li>
+                    <li><strong>Jabra:</strong> เน้นในด้านคุณภาพเสียงและฟีเจอร์สำหรับการทำงาน</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/products.js"></script>
+  </body>
+</html>

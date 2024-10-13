@@ -1,0 +1,82 @@
+body {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.border rounded p-3 bg-light shadow-sm{
+  gap: 20px;
+  display: flex;
+  margin-top: 30px;
+}
+.shipping-address {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.shipping-address h5 {
+  font-size: 1.5rem;
+  color: #343a40;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center; /* จัดข้อความกลาง */
+}
+
+.shipping-address .form-group,
+.shipping-address .form-row {
+  margin-bottom: 20px;
+}
+
+.shipping-address label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+.shipping-address input,
+.shipping-address textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.shipping-address input:focus,
+.shipping-address textarea:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.shipping-address input::placeholder,
+.shipping-address textarea::placeholder {
+  color: #6c757d;
+}
+
+.shipping-address textarea {
+  resize: vertical;
+}
+
+.shipping-address .form-control {
+  margin-bottom: 15px;
+}
+
+.form-row .col-md-6 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+main {
+  margin-bottom: 20px;
+  height: 100%;
+  flex-grow: 1;
+}

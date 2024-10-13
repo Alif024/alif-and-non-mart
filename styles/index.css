@@ -1,0 +1,455 @@
+.btn-dark-blue {
+  background-color: var(--dark-blue);
+  color: white;
+  border-radius: 100px;
+  border: none;
+  padding: var(--padding-btn);
+  transition-duration: 300ms;
+}
+.btn-dark-blue:hover {
+  background-color: var(--dark-blue-20);
+}
+.btn-dark-blue-outline {
+  background-color: transparent;
+  color: var(--dark-blue);
+  border: 3px solid var(--dark-blue);
+  border-radius: 100px;
+  padding: var(--padding-btn);
+  transition-duration: 200ms;
+}
+.btn-dark-blue-outline > svg.play-icon {
+  border-radius: 100%;
+  border: 3px solid var(--dark-blue);
+  fill: var(--dark-blue);
+  stroke: var(--dark-blue);
+  transition-duration: 200ms;
+  margin-left: 8px;
+}
+.btn-dark-blue-outline > svg.next-icon {
+  stroke: var(--dark-blue);
+  transition-duration: 200ms;
+  margin-left: 16px;
+}
+.btn-dark-blue-outline:hover {
+  background-color: var(--dark-blue);
+  color: white;
+}
+.btn-dark-blue-outline:hover svg.play-icon {
+  fill: white;
+  stroke: white;
+  border-color: white;
+}
+.btn-dark-blue-outline:hover svg.next-icon {
+  stroke: white;
+}
+
+.bg-header {
+  top: 0;
+  position: absolute;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), #92EFFD);
+  height: 807px;
+  width: 100%;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  z-index: -1;
+}
+/* #img-banner {
+  width: 100%;
+  height: 650px;
+  border-radius: 50px;
+  background-image: url("../assets/ALIF\ ANd\ Non\ mart.png");
+  background-position: top;
+  background-size: cover;
+} */
+.image-container {
+  position: relative;
+  width: 100%; /* กำหนดขนาดตามที่ต้องการ */
+  height: 650px;
+  border-radius: 30px;
+}
+.fade-image {
+  position: absolute;
+  object-position: top;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 30px;
+  background-size: cover;
+}
+.fade-image.show {
+  opacity: 1;
+}
+.fade-image#image1 {
+  background-image: url("../assets/AlifAndNonBanner1.svg");
+}
+.fade-image#image2 {
+  background-image: url("../assets/AlifAndNonBanner2.svg");
+}
+
+header {
+  background-color: transparent;
+  height: 695px;
+}
+
+section.hero {
+  color: var(--dark-blue);
+  height: calc(100% - 52px);
+}
+section.hero .row {
+  height: 80%;
+  align-items: center;
+}
+section.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+section.hero h2 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 36px;
+}
+section.hero p {
+  margin-bottom: 36px;
+}
+section.hero button {
+  margin-right: 20px;
+}
+
+.promotion-and-best-seller {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* สร้าง 2 คอลัมน์: คอลัมน์แรก 1fr และคอลัมน์ที่สอง 300px */
+  grid-gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
+  padding: 20px;
+}
+
+/* Promotion Section */
+.promotion-section {
+  display: grid;
+}
+
+.promotion-image img {
+  max-width: 100%; /* ปรับให้รูปครอบคลุมพื้นที่ของ parent */
+  border-radius: 10px;
+}
+
+/* Best Seller Section */
+.best-seller-section {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.best-seller-section h3 {
+  margin-bottom: 10px;
+}
+
+.best-seller-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.best-seller-section ul li {
+  margin-bottom: 10px;
+}
+
+
+
+.category {
+  margin: 60px 0;
+}
+.category .title {
+  grid-area: title-category;
+  margin-bottom: 30px;
+}
+.category .title h1 {
+  font-weight: 700;
+}
+.category .title h3 {
+  font-weight: bold;
+}
+.category button {
+  grid-area: button-category;
+  width: fit-content;
+  height: fit-content;
+  align-self: self-end;
+  justify-self: self-end;
+  margin-bottom: 38px;
+}
+.category .cards {
+  grid-area: card-category;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 280px 280px 280px 280px;
+  justify-content: space-between;
+  align-content: space-between;
+  row-gap: 58px;
+}
+.category .cards > .card,
+.category .cards > .card-last {
+  height: auto;
+}
+
+.cards#products-recommend .card,
+.cards#products-recommend .card-last {
+  padding: 20px;
+  gap: 10px;
+}
+.cards#products-recommend .card .img,
+.cards#products-recommend .card-last .img {
+  width: 100%;
+  flex-grow: 1;
+}
+.cards#products-recommend .card .img img,
+.cards#products-recommend .card-last .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.cards#products-recommend .card .details,
+.cards#products-recommend .card-last .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+.cards#products-recommend .card .details p,
+.cards#products-recommend .card-last .details p,
+.cards#products-recommend .card .details h3,
+.cards#products-recommend .card-last .details h3 {
+  margin: 0;
+}
+
+.card#electronics {
+  background-image: url("../assets/different-types-of-electronic-components.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.card#computers-assesories {
+  background-image: url("../assets/computer-accessories.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.card#home-appliances {
+  background-image: url("../assets/home-appliances.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.cards#category {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.cards#category .card {
+  min-width: 217.325px;
+  height: 220px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.card-last {
+  display: none;
+}
+.card-last-cate {
+  display: flex;
+}
+.cards#category .card:hover {
+  transform: scale(1.01); /* ขยายขนาดเล็กน้อย */
+  transition: 500ms;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+.cards#products-recommend .card:hover {
+  transform: scale(1.05); /* ขยายขนาดเล็กน้อย */
+  transition: 500ms;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+.category .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "title-category title-category title-category button-category"
+    "card-category card-category card-category card-category";
+  margin-bottom: 50px;
+}
+
+footer {
+  background-image: linear-gradient(#92EFFD, rgba(255, 255, 255, 0));
+  padding-top: 80px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+footer .title {
+  max-width: 695px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+footer .logo > p {
+  grid-area: p-footer;
+  margin: 0;
+  text-wrap: nowrap;
+}
+footer .logo > object {
+  grid-area: footer-logo;
+  justify-self: center;
+}
+footer .logo > .icons-nav {
+  grid-area: icons-footer;
+  gap: 40px;
+}
+footer .logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "p-footer footer-logo icons-footer";
+  align-items: center;
+  padding: 40px 0 40px 0;
+  border-top: var(--dark-blue) 1px solid;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .category .cards {
+    grid-template-columns: 280px 280px 280px;
+    justify-content: space-evenly;
+  }
+  .card-last {
+    display: flex;
+  }
+  .card-last-cate {
+    display: none;
+  }
+
+  footer .subcribe-now > h1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .category .cards {
+    row-gap: 24px;
+  }
+  .fade-image#image2 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart1\ \(960\ x\ 650\ px\).svg");
+  }
+  .fade-image#image1 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart2\ \(960\ x\ 650\ px\).svg");
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .fade-image#image2 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart\ 1\ \(720\ x\ 650\ px\).svg");
+  }
+  .fade-image#image1 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart\ 2\ \(720\ x\ 650\ px\).svg");
+  }
+
+  section.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+  section.hero h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 36px;
+  }
+  section.hero p {
+    margin-bottom: 36px;
+  }
+  section.hero button {
+    margin-right: 10px;
+  }
+
+  .category .title h1 {
+    font-size: 2rem;
+  }
+  .category .title h3 {
+    font-size: 1.3rem;
+  }
+  .category .cards {
+    justify-content: space-between;
+    grid-template-columns: 220px 220px 220px;
+    row-gap: 18px;
+  }
+
+  footer .logo {
+    grid-template-areas:
+      "footer-logo footer-logo footer-logo"
+      "icons-footer icons-footer icons-footer"
+      "p-footer p-footer p-footer";
+  }
+  footer .logo > p {
+    justify-self: center;
+    margin-top: 30px;
+  }
+  footer .logo > .icons-nav {
+    justify-self: center;
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  .fade-image#image2 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart\ 1\(540\ x\ 650\ px\).svg");
+  }
+  .fade-image#image1 {
+    background-image: url("../assets/ALIF\ ANd\ Non\ mart\ 2\ \(540\ x\ 650\ px\).svg");
+  }
+
+  .category .cards {
+    justify-content: space-evenly;
+    grid-template-columns: 200px 200px;
+  }
+  .card-last {
+    display: none;
+  }
+  .card-last-cate {
+    display: flex;
+  }
+  .category .container {
+    grid-template-areas:
+      "title-category title-category title-category title-category"
+      "card-category card-category card-category card-category"
+      "button-category button-category button-category button-category";
+  }
+  .category button {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+  .cards#category {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  footer {
+    padding-top: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .category .cards {
+    grid-template-columns: 150px 150px;
+  }
+}

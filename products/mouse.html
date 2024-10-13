@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/products.css" />
+  </head>
+  <body>
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="../assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img src="../assets/logo-no-background.png" alt="" />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+ 
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../Index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ordering.html">Ordering</a>
+          </li>
+ 
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus">❮</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          CLOSE
+        </button>
+        <button class="checkOut">CHECK OUT</button>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="product-details">
+        <div class="images-gallery">
+          <div class="img">
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="products-img-slide">
+              <img
+                src="../assets/Mouse.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Mouse1.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Mouse2.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+
+            <div class="products-img-slide">
+              <img
+                src="../assets/Mouse3.png"
+                style="width: 100%; object-fit: scale-down;"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Mouse.png"
+                style="width: 100%"
+                onclick="currentProductImg(1)"
+                alt="The Woods"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Mouse1.png"
+                style="width: 100%"
+                onclick="currentProductImg(2)"
+                alt="Cinque Terre"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Mouse2.png"
+                style="width: 100%"
+                onclick="currentProductImg(3)"
+                alt="Mountains and fjords"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="img-slide cursor"
+                src="../assets/Mouse3.png"
+                style="width: 100%"
+                onclick="currentProductImg(4)"
+                alt="Northern Lights"
+              />
+            </div>
+          </div>
+          
+          <p class="product-warranty"><strong>การรับประกัน</strong>: รับประกันสินค้า 1 ปี (กรณีใช้งานตามคู่มือ)</p>
+          <div class="product-contact">
+            <h3>ติดต่อสอบถามเพิ่มเติม:</h3>
+            <p>โทร: 02-123-4567</p>
+            <p>อีเมล: <a href="mailto:support@electronics.co.th" style="text-decoration: none; color: white;">support@electronics.co.th</a></p>
+          </div>
+        </div>
+        <div class="product-info">
+          <h1>Gaming Mouse</h1>
+          <h2>฿500.00</h2>
+          <div class="btns">
+            <div class="quantity">
+              <button class="decrease" onclick="plusQuantity(-1)">❮</button>
+              <input type="number" min="1" value="1" id="product-quantity">
+              <button class="increase" onclick="plusQuantity(1)">></button>
+            </div>
+            <button class="btn-dark-blue-outline" style="height: 60px" onclick="addProduct('5')">
+              Add to cart
+            </button>
+          </div>
+          <div class="description">
+            <div class="product-container">
+              <h1 class="product-title">รายละเอียดสินค้า</h1>
+              <div class="product-detail">
+                <p>
+                  เมาส์สำหรับเล่นเกม (<span class="highlight">Gaming Mouse</span>) เป็นเมาส์ที่ออกแบบมาเพื่อให้การควบคุมและการตอบสนองที่ดียิ่งขึ้นสำหรับการเล่นเกม 
+                  ซึ่งมีฟีเจอร์และคุณสมบัติที่แตกต่างจากเมาส์ทั่วไป เช่น ความละเอียด DPI ที่สูงขึ้น ปุ่มมาโคร การปรับแต่งน้ำหนัก และเซ็นเซอร์ที่มีความแม่นยำสูง
+                </p>
+        
+                <h4>คุณสมบัติที่สำคัญของ Gaming Mouse</h4>
+                <ul>
+                    <li><strong>ความละเอียด DPI:</strong> DPI (Dots Per Inch) คือค่าความไวของการเคลื่อนที่ของเมาส์ ยิ่งค่า DPI สูง เมาส์ก็จะเคลื่อนไหวได้เร็วและแม่นยำมากขึ้น</li>
+                    <li><strong>เซ็นเซอร์:</strong> เมาส์สำหรับเล่นเกมมักใช้เซ็นเซอร์แบบ Optical หรือ Laser ที่มีความแม่นยำสูง เหมาะสำหรับการใช้งานในเกมที่ต้องการการควบคุมที่ละเอียด</li>
+                    <li><strong>ปุ่มเพิ่มเติมและมาโคร:</strong> มีปุ่มเสริมที่สามารถตั้งค่าเป็นคำสั่งพิเศษ (Macro) ได้ เช่น การใช้ปุ่มสำหรับยิงอาวุธ, เปลี่ยนโหมด หรือคำสั่งพิเศษอื่นๆ</li>
+                    <li><strong>การปรับแต่งน้ำหนัก:</strong> บางรุ่นสามารถปรับน้ำหนักของเมาส์ได้เพื่อให้เหมาะสมกับการใช้งาน</li>
+                    <li><strong>ไฟ RGB:</strong> เพิ่มความสวยงามด้วยไฟ LED RGB ที่สามารถปรับแต่งสีและเอฟเฟกต์ได้</li>
+                </ul>
+        
+                <h4>ประเภทของเซ็นเซอร์ใน Gaming Mouse</h4>
+                <ul>
+                    <li><strong>Optical Sensor:</strong> เป็นเซ็นเซอร์ที่ใช้แสงในการตรวจจับการเคลื่อนไหว มีความแม่นยำสูงและมีการตอบสนองที่รวดเร็ว</li>
+                    <li><strong>Laser Sensor:</strong> ใช้แสงเลเซอร์ในการตรวจจับ มีความแม่นยำสูงมาก แต่สามารถใช้งานได้ดีกับพื้นผิวที่หลากหลายมากกว่า Optical Sensor</li>
+                </ul>
+        
+                <h4>การเลือก Gaming Mouse ที่เหมาะสม</h4>
+                <ul>
+                    <li><strong>การจับ (Grip Style):</strong> เมาส์สำหรับเล่นเกมมีหลายรูปทรงให้เลือกตามลักษณะการจับ เช่น Palm Grip, Claw Grip, และ Fingertip Grip</li>
+                    <li><strong>ขนาดและน้ำหนัก:</strong> ควรเลือกเมาส์ที่มีขนาดและน้ำหนักที่พอดีมือ เพื่อการควบคุมที่ดีและไม่เมื่อยล้าหลังการใช้งานเป็นเวลานาน</li>
+                    <li><strong>ความละเอียด DPI:</strong> เลือกค่า DPI ตามความถนัดในการใช้งาน เช่น ค่าต่ำสำหรับการยิงหัว (Headshot) หรือค่าที่สูงสำหรับการเคลื่อนไหวที่รวดเร็ว</li>
+                    <li><strong>ปุ่มมาโครและซอฟต์แวร์ปรับแต่ง:</strong> ควรมีปุ่มเสริมและสามารถปรับแต่งคำสั่งได้ตามความต้องการ</li>
+                </ul>
+        
+                <h4>แบรนด์ที่ได้รับความนิยม</h4>
+                <ul>
+                    <li><strong>Logitech:</strong> แบรนด์ที่มีชื่อเสียงด้านเมาส์เล่นเกมและมีเทคโนโลยีเซ็นเซอร์ที่แม่นยำสูง</li>
+                    <li><strong>Razer:</strong> โดดเด่นในด้านการออกแบบที่มีไฟ RGB และการตอบสนองที่ดี</li>
+                    <li><strong>SteelSeries:</strong> เน้นการออกแบบที่เรียบง่าย มีความแม่นยำ และการตอบสนองที่รวดเร็ว</li>
+                    <li><strong>Corsair:</strong> มีคุณสมบัติที่หลากหลาย เช่น ปุ่มมาโครและการปรับแต่งน้ำหนัก</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/products.js"></script>
+  </body>
+</html>

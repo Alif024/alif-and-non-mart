@@ -1,0 +1,216 @@
+body {
+  background-color: rgb(246, 246, 246);
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+  height: 250px;
+}
+.card {
+  min-width: 217.325px;
+  height: 220px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  opacity: 0.3;
+  color: white;
+  font-weight: 500;
+  position: relative;
+}
+.card.active {
+  opacity: 1;
+}
+.card#electronics {
+  background-image: url("../assets/different-types-of-electronic-components.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.card#computers-assesories {
+  background-image: url("../assets/computer-accessories.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.card#home-appliances {
+  background-image: url("../assets/home-appliances.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* ทำให้สามารถใช้ ::before ได้ */
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาออกนอกขอบ */
+}
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 1; /* อยู่ด้านบนของเนื้อหา */
+}
+.card span {
+  position: absolute;
+  bottom: 10%;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.products {
+  margin: 22px 0;
+  /* border-radius: 20px; */
+  height: auto;
+  width: 100%;
+  /* background-color: white; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 22px;
+}
+
+.product-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: center;
+  padding: 20px;
+}
+.product-card:hover {
+  /* transform: scale(1.05); */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition-duration: 500ms;
+  z-index: 8;
+}
+.product-card:hover .card-color {
+  /* transform: scale(1.05); */
+  opacity: 0.7;
+}
+.add-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  display: none;
+  transform: translateY(25%);
+}
+.add-card svg {
+  width: 70%;
+  height: auto;
+}
+.product-card:hover .add-card {
+  display: block;
+}
+svg:hover {
+  transform: scale(1.1);
+  transition: 500ms;
+}
+/* .add-card:hover svg circle, .add-card:hover svg path {
+  stroke: black;
+} */
+
+.product-card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-card .details {
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 9;
+}
+
+.product-card .details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-card .details p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.product-card .details a {
+  text-decoration-color: blue;
+}
+.product-card:hover .details a {
+  text-decoration-color: #ffffff;
+  transition: 500ms;
+}
+.product-card:hover .details p, .product-card:hover .details h3, .product-card:hover .details span {
+  color: #ffffff;
+}
+
+.product-card .details span {
+  font-weight: bold;
+  color: #333;
+}
+.product-card .details a:hover span {
+  letter-spacing: 5px;
+  transition: 500ms;
+}
+
+@media screen and (max-width: 1400px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .product-card img {
+    object-fit: scale-down;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .product-card img {
+    object-fit: cover;
+  }
+  .add-card {
+    transform: translateY(60%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-cards {
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .product-card img {
+    object-fit: scale-down;
+  }
+  .add-card {
+    height: 50%;
+    transform: translateY(10%);
+  }
+}

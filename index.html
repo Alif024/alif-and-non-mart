@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div class="bg-header"></div>
+    <!-- Navbar -->
+    <nav class="sticky-top">
+      <div class="container">
+        <a
+          class="menu"
+          data-bs-toggle="offcanvas"
+          href="#toggle-menu-nav"
+          role="button"
+          aria-controls="toggle-menu-nav"
+        >
+          <img src="assets/menu-icon.svg" alt="" width="auto" height="35px" />
+        </a>
+        <img src="assets/logo-no-background.png" alt="" />
+        <ul class="nav flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html">Ordering</a>
+          </li>
+        </ul>
+        <div
+          class="icon-cart"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cart-product"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.5 14C23.5 15.93 21.93 17.5 20 17.5C18.07 17.5 16.5 15.93 16.5 14V7.5H11.5V14C11.5 18.687 15.313 22.5 20 22.5C24.687 22.5 28.5 18.687 28.5 14V7.5H23.5V14Z"
+              fill="black"
+            />
+            <path
+              d="M0 36C0 38.2 1.8 40 4 40H36C38.2 40 40 38.2 40 36V0H0V36ZM5 5H35V35H5V5Z"
+              fill="black"
+            />
+          </svg>
+          <span>0</span>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="toggle-menu-nav"
+      aria-labelledby="Navbar-Menu"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="Navbar-Menu"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html">Ordering</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="cartTab offcanvas offcanvas-end"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="cart-product"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Shopping Cart
+        </h1>
+      </div>
+      <div class="offcanvas-body">
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="https://via.placeholder.com/150" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">$280</div>
+            <div class="quantity">
+              <span class="minus"><</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="close" data-bs-dismiss="offcanvas" aria-label="Close">
+          Close
+        </button>
+        <button class="checkOut">Payment</button>
+      </div>
+    </div>
+    <!-- End Navbar -->
+
+    <header class="hero">
+      <section class="hero">
+        <div class="container">
+          <div class="row">
+            <div class="image-container">
+              <div src="" alt="" id="image1" class="fade-image show"></div>
+              <div src="" alt="" id="image2" class="fade-image"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="category">
+      <div class="container">
+        <div class="title">
+          <h1>หมวดหมู่ทั้งหมด</h1>
+        </div>
+        <div class="cards" id="category">
+          <div class="card">
+            <div class="card" id="electronics">
+            </div>
+          </div>
+          <div class="card">
+            <div class="card" id="computers-assesories">
+            </div>
+          </div>
+          <div class="card">
+            <div class="card" id="home-appliances">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="category">
+      <div class="container">
+        <div class="title">
+          <h1>สินค้าแนะนำ</h1>
+        </div>
+        <button
+          class="btn-dark-blue-outline"
+          onclick="window.location.href = `category.html`;"
+        >
+          เพิ่มเติม<svg
+            width="7"
+            height="10"
+            viewBox="0 0 7 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="next-icon"
+          >
+            <path
+              d="M1.5 1L5.5 5L1.5 9"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="cards" id="products-recommend">
+          <div class="card">
+            <div class="img">
+              <img src="https://via.placeholder.com/200x150" alt="" />
+            </div>
+            <div class="details">
+              <h3>เครื่องปั่นน้ำผลไม้ (Blender)</h3>
+              <p>฿1,799.00</p>
+              <a href="air-purifier.html"><span>More Info</span></a>
+            </div>
+          </div>
+          <div class="card card-last">
+            <img src="https://via.placeholder.com/200x150" alt="" />
+            <h3>Scottish Fold</h3>
+            <p>
+              The Scottish Fold is a breed of domestic cat with a natural
+              dominant-gene mutation that affects cartilage throughout the body,
+              causing the ears to fold.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="text-center title">
+          <h3>ALif and Non Mart</h3>
+          <p>
+            เว็ป E-Commerce ขายสินค้าเกี่ยวกับอุปกรณ์อิเล็กทรอนิกส์ ของใช้ในบ้าน และสินค้าอื่นอีกมากมาย
+          </p>
+        </div>
+        <div class="logo">
+          <p>&copy; 2022 Alif And Non Mart. All rights reserved.</p>
+          <object data="assets/logo-no-background.png" style="height: 80px; width: fit-content;" type=""></object>
+          <div class="icons-nav d-flex justify-content-end">
+            <img src="assets/Facebook - Negative.svg" alt="" style="width: 35px; height: auto;"/>
+            <img src="assets/icons8-ig.svg" alt="" style="width: 40px; height: auto;"/>
+            <img src="assets/icon-shopee.svg" alt="" style="width: 40px; height: auto; transform: translateY(-3px);"/>
+            <img src="assets/icon-tiktok.svg" alt="" style="width: 40px; height: auto;"/>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
