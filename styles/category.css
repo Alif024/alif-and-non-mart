@@ -192,9 +192,6 @@ svg:hover {
   .product-card img {
     object-fit: cover;
   }
-  .add-card {
-    transform: translateY(60%);
-  }
 }
 
 @media screen and (max-width: 768px) {
